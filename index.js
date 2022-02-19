@@ -69,7 +69,8 @@ for (let i = 0; i < 6; i++) {
     console.log("\x1b[2KCongratulations! You got the word in 6 tries or less.");
     win = true;
     break;
-  }
+  } else {
+    console.log(`\x1b[2KUnfortunately, you have lost. Today's answer, was ${wordle}!`);
 }
 
 let emojigrid = `Wordle ${time} ${win ? tries.length : "X"}/6\n\n`
@@ -77,7 +78,7 @@ grids.forEach((grid, number) => {
   grid.forEach(letter => {
     emojigrid += emojis[letter];
   });
-  if (number < grid.length - 1) emojigrid += "\n";
+  emojigrid += "\n";
 });
 
 cp.writeSync(emojigrid);
