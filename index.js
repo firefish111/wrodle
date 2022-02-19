@@ -69,8 +69,9 @@ for (let i = 0; i < 6; i++) {
     console.log("\x1b[2KCongratulations! You got the word in 6 tries or less.");
     win = true;
     break;
-  } else {
+  } else if (tries.length === 6) {
     console.log(`\x1b[2KUnfortunately, you have lost. Today's answer, was ${wordle}!`);
+    break;
   }
 }
 
