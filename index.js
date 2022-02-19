@@ -71,6 +71,7 @@ for (let i = 0; i < 6; i++) {
     break;
   } else {
     console.log(`\x1b[2KUnfortunately, you have lost. Today's answer, was ${wordle}!`);
+  }
 }
 
 let emojigrid = `Wordle ${time} ${win ? tries.length : "X"}/6\n\n`
